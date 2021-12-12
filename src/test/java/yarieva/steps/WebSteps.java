@@ -8,11 +8,10 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
-import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static org.openqa.selenium.By.linkText;
-import static org.openqa.selenium.By.partialLinkText;
+
 
 public class WebSteps {
 
@@ -34,9 +33,8 @@ public class WebSteps {
     }
 
 
-    @Step("Проверяем что существует вкладка Issue")
-    public void shouldSeeIssue() {
-      //  $(withText("#" + number)).should(Condition.visible);
+    @Step("Проверяем что существует Issue с номером {number}")
+    public void shouldSeeIssuer() {
         $("#repository-container-header").shouldHave(Condition.text("Issues"));
     }
 
@@ -46,6 +44,5 @@ public class WebSteps {
         final WebDriver driver = WebDriverRunner.getWebDriver();
         return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
     }
-
 
 }

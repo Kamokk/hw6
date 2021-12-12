@@ -3,13 +3,11 @@ package yarieva;
 import com.codeborne.selenide.Condition;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 import static org.openqa.selenium.By.linkText;
-import static org.openqa.selenium.By.partialLinkText;
+
 
 public class StepLambdaTest {
 
@@ -30,11 +28,11 @@ public class StepLambdaTest {
             $(linkText("Kamokk/hw6")).click();
         });
 
-        step("Проверяем что существует вкладка Issue" , () -> {
-          //  $(withText("Issues")).should(Condition.visible);
+        step("Проверяем что существует вкладка Issue", () -> {
+
             $("#repository-container-header").shouldHave(Condition.text("Issues"));
-    });
+        });
 
 
-}
+    }
 }

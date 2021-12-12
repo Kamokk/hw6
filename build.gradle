@@ -6,6 +6,9 @@ plugins {
 group 'org.example'
 version '1.0-SNAPSHOT'
 
+compileTestJava {
+    options.encoding = 'UTF-8'
+}
 
 allure {
 
@@ -35,6 +38,7 @@ dependencies {
             'com.codeborne:selenide:6.0.3'
     )
     testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.7.2')
+    runtimeOnly 'org.aspectj:aspectjweaver:1.9.7'
 }
 
 test {
