@@ -20,16 +20,16 @@ public class SelenideWithListener {
     @Owner("yarieva")
     @Feature("GitHub")
     @Story("Issues")
-    @DisplayName("Annotation Test")
+    @DisplayName("Selenide with Listener Test")
     @Link(name = "GitHub", url = "https://github.com")
 
     @Test
-    public void testGithub() {
+    public void testSelenideWithListenerSteps() {
         SelenideLogger.addListener("allure", new AllureSelenide());
         steps.openMainPage();
         steps.searchForRepository(REPOSITORY);
         steps.goToRepository(REPOSITORY);
-
+        steps.shouldSeeIssue();
     }
 
 

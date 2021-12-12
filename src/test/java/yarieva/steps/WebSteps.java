@@ -20,6 +20,7 @@ public class WebSteps {
         open("https://github.com");
     }
 
+    //  AllureLifecycle lifecycle = Allure.getLifecycle();
     @Step("Ищем репозиторий {repository}")
     public void searchForRepository(String repository) {
         $(".header-search-input").click();
@@ -33,9 +34,15 @@ public class WebSteps {
     }
 
 
-    @Step("Проверяем что существует Issue с номером {number}")
-    public void shouldSeeIssuer() {
+    @Step("Проверяем что существует вкладка Issue")
+    public void shouldSeeIssue() {
         $("#repository-container-header").shouldHave(Condition.text("Issues"));
+
+    }
+
+    @Step("Прикрепляем скрин")
+    public void attachmentScreenshot() {
+        takeScreenshot();
     }
 
 

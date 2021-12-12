@@ -15,7 +15,7 @@ public class StepLambdaTest {
 
 
     @Test
-    public void testGithub() {
+    public void testLambdaSteps() {
         step("Открываем главную страницу", () -> {
             open("https://github.com");
         });

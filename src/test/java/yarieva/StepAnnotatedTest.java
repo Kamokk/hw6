@@ -22,11 +22,12 @@ public class StepAnnotatedTest {
     @Link(name = "GitHub", url = "https://github.com")
 
     @Test
-    public void testGithub() {
+    public void testAnnotatedSteps() {
         steps.openMainPage();
         steps.searchForRepository(REPOSITORY);
         steps.goToRepository(REPOSITORY);
-
+        steps.shouldSeeIssue();
+        steps.attachmentScreenshot();
     }
 
 
