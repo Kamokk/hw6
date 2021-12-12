@@ -13,4 +13,5 @@
 В качестве ответа на задание приложите ссылку на свой репозиторий GitHub в поле ответа
 
 **Решение**
+
 Созданы 3 класса SelenideWithListener(), StepLambdaTest(), StepAnnotatedTest()
